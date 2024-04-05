@@ -1,20 +1,76 @@
-# Case study
+# Case study of lightApp
 
-this repo contains practical cloud work 
+this repo contains practical cloud work of deploying an app 
+
+the repository contains 2 diretories, terraform and k8s-manifest, where the terraform codes contains all the terraform 
+related codes for managing and maintaining the state of the infrastructure and k8s-manifests contains kubernetes
+manifests files
 
 # Azure resourse provisioning with terraform
-in this project we provisioned azure resourses through terraform, managing and monitoring kubernetes clusters.
+in this project, we provisioned azure resources through terraform, managing and monitoring kubernetes clusters.
+the cluster contains 2 nodes for high availability, following security best practices.
 
-the repository contains 2 folders, terraform and k8s-manifest, where the terraform codes contains all the terraform 
-related codes for managing and maintaining the state of the infrastructure
 
 # Terraform commands
 - `terraform init` : this initializes the provider in which was specified in the providers.tf file
-- terraform validate: performs check in syntax available in the code
-- terraform plan: performs a dry run of the desired state
-- terraform apply: this command is used to achieve the desired state from the actual state
-- terraform fmt: is used to perform a format to user friendly and readable formaat
-- terraform destroy: is used to destroy created resource and perform cleanup
+- `terraform validate` : performs check in syntax available in the code
+- `terraform plan` : performs a dry run of the desired state
+- `terraform apply` : this command is used to achieve the desired state from the actual state
+- `terraform fmt` : is used to perform a format to user friendly and readable formaat
+- `terraform destroy` : is used to destroy created resource and perform cleanup
 
-# Aks
-aks resource was created to manage 2 nodes for availability 
+# resouces
+this is the hierarchy of files the terraform directory
+
+
+!()[]
+
+### prerequisite
+- Providers.tf : this file indicates as to which provider terraform will use for provisioning
+- Resource group: this is like a bucket, in which hold all the resources used to complete the project, it is scoped to a region
+- backend.tf : this is used to save the state of the infrastructure provisioned
+
+### Networking
+
+- virtual network: is used to isolate resources in an azure account
+- subnets: are used for logical grouping of resources
+
+### log analytics
+- log analytics workspace : a workspace is
+- log analytics solution
+
+### Storage 
+- storage account:
+- 
+
+### Monitoring
+
+### Azure Kubernetes Service
+
+
+
+
+
+
+# kubectl commands
+### get commands
+- `kubectl get nodes`: shows the lists of the availatble nodes in the cluster
+- `kubectl get pods` : shows all the pods in the node
+- `kubectl get service` :this fetches all the available services in a node
+- `kubectl get ns` : gets all the namespaces available
+
+### create commands
+- `kubectl apply -f <filename>.yaml ` : this is used to create the kind of object in the file
+- 
+
+
+
+
+
+# continous integration and deployment using github actions
+this application cicd is managed through github actions with jobs to perform unit testing,
+linting, building docker images and deploying to azure kuberneted service
+
+
+# challenges
+- major challenge was encountered with the little time
