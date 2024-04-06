@@ -23,11 +23,12 @@ the cluster contains 2 nodes for high availability, following security best prac
 this is the hierarchy of files the terraform directory
 
 
-!()[]
+![]()
 
 ### prerequisite
 - Providers.tf : this file indicates as to which provider terraform will use for provisioning
-- Resource group: this is like a bucket, in which hold all the resources used to complete the project, it is scoped to a region
+- Resource group: this is like a bucket, in which hold all the resources used to complete the project,
+  it is scoped to a region
 - backend.tf : this is used to save the state of the infrastructure provisioned
 
 ### Networking
@@ -48,21 +49,28 @@ this is the hierarchy of files the terraform directory
 
 # How it Works
 ## Steps
+
 - ***Step 1*** : Run terraform in cicd
-  locate and run the `terraform/terra-cd.yml` file, this a cicd configuration using
+- locate and run the `terraform/terra-cd.yml` file, this a cicd configuration using
   github actions to provision resources on azure using terraform as the iac tool.
   this code has been set to manually trigger to prevent uneccesary trigger while writing the code.
+  
+- ***Step 2*** : Prepare Images using cicd
+- the project consists of two seperate repositories containing 2 microservices, frontend and backend
+- each time there is a code change in the repos, the pipeline is triggered and cicd jobs like test, lint,
+  building artifacts and images are performed
+-  which are then pushed to acr and finally deployed to aks.
 
-- ***Step 2*** : 
+- ***Step 2*** : MANAGINGING CLUSTERS
+- 
+- 
+- 
 
-### Azure Kubernetes Service
+# Azure Kubernetes Service
+Azure kubernetes services is an azure managed services used to run and manage cluster, 
+manages your control plane and lets you focus on building powerful microservies managing your nodes
 
-
-
-
-
-
-# kubectl commands
+## kubectl commands
 ### get commands
 - `kubectl get nodes`: shows the lists of the availatble nodes in the cluster
 - `kubectl get pods` : shows all the pods in the node
@@ -72,10 +80,6 @@ this is the hierarchy of files the terraform directory
 ### create commands
 - `kubectl apply -f <filename>.yaml ` : this is used to create the kind of object in the file
 - 
-
-
-
-
 
 # continous integration and deployment using github actions
 this application cicd is managed through github actions with jobs to perform unit testing,
