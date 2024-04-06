@@ -41,9 +41,19 @@ this is the hierarchy of files the terraform directory
 
 ### Storage 
 - storage account:
-- 
+- storage class:
 
 ### Monitoring
+- azure monitoring:
+
+# How it Works
+## Steps
+- ***Step 1*** : Run terraform in cicd
+  locate and run the `terraform/terra-cd.yml` file, this a cicd configuration using
+  github actions to provision resources on azure using terraform as the iac tool.
+  this code has been set to manually trigger to prevent uneccesary trigger while writing the code.
+
+- ***Step 2*** : 
 
 ### Azure Kubernetes Service
 
