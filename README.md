@@ -19,7 +19,7 @@ the cluster contains 2 nodes for high availability, following security best prac
 - `terraform fmt` : is used to perform a format to user friendly and readable formaat
 - `terraform destroy` : is used to destroy created resource and perform cleanup
 
-# resouces
+# resources
 this is the hierarchy of files the terraform directory
 
 
@@ -36,7 +36,7 @@ this is the hierarchy of files the terraform directory
 - subnets: are used for logical grouping of resources
 
 ### log analytics
-- log analytics workspace : a workspace is
+- log analytics workspace : a workspace is like a holder that shelters log analytics solutions and other related services
 - log analytics solution
 
 ### Storage 
